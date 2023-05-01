@@ -1,10 +1,15 @@
+import { useContext, useEffect } from "react";
 import Header from "../components/Header";
+import { UserContext } from "../App";
 
 const MainLayout = (props) => {
+
     const { children } = props;
     return <>
         <Header />
-        {children}
+        <div>
+            {children}
+        </div>
     </>
 }
 export default MainLayout;

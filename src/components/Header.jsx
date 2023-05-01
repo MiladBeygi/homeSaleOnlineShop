@@ -1,9 +1,21 @@
 import { Navbar } from "flowbite-react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../App";
 
 const Header = (props) => {
     const navigate = useNavigate();
+    const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+    useEffect(() => {
+        if (sessionStorage.getItem("ACCESS_TOKEN")) {
+            setIsLoggedIn(true);
+        }
+    }, [isLoggedIn])
+    const logOutHandler = (event) => {
+        sessionStorage.removeItem("ACCESS_TOKEN");
+        setIsLoggedIn(false);
+    }
     return <>
         <div className="flex justify-center items-center mx-5 " dir="rtl">
             <div className="w-1/4">
@@ -19,12 +31,13 @@ const Header = (props) => {
                 </Link>
             </div>
             <div className="justify-end w-2/4 sm:flex">
-                <Button onClick={() => navigate("../../../registration")} classes='m-2'>
+                {!isLoggedIn && <Button onClick={() => navigate("../../../registration")} classes='m-2'>
                     ثبت نام
-                </Button>
-                <Button onClick={() => navigate("../../../login")} classes='m-2'>
+                </Button>}
+                {!isLoggedIn && <Button onClick={() => navigate("../../../login")} classes='m-2'>
                     ورود
-                </Button>
+                </Button>}
+                {isLoggedIn && <Button classes='bg-red-500 m-2' onClick={logOutHandler}>خروج</Button>}
             </div>
         </div>
         <hr />

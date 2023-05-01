@@ -13,6 +13,20 @@
       "userName": "admin",
       "fullName": "milad b",
       "id": 2
+    },
+    {
+      "email": "almasebourse@gmail.com",
+      "password": "$2a$10$1/wYbsfy89mN0zswPNTC5OQr8TmOgeB/AFJH6amay1zQDIc/Dg5Ny",
+      "userName": "admin",
+      "fullName": "milad beygi",
+      "id": 3
+    },
+    {
+      "email": "miladforwarzone@gmail.com",
+      "password": "$2a$10$JwmXzQqnGjm2inmcXUxA8.cIawNAcFcpUVwbo7K3BDit/xiwgChxa",
+      "userName": "fdfd",
+      "fullName": "milad beygi",
+      "id": 4
     }
   ]
 }

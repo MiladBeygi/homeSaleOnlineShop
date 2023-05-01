@@ -3,8 +3,12 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import useInput from "../hooks/useInput";
 import { useState } from "react";
-
+import { REGISTER_URL } from "../constants/URLS";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 const RegistrationPage = (props) => {
+    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false)
     //using custom hook for input validation
     const { value: userName, isValid: userNameIsValid, hasError: userNameHasError, valueChangeHandler: userNameChangeHandler, inputBlurHandler: userNameBlurHandler, reset: userNamereset } = useInput((input) => input.length >= 2);
@@ -27,7 +31,7 @@ const RegistrationPage = (props) => {
             email: emailValue
         }
         try {
-            const res = await fetch("http://localhost:3000/register",
+            const res = await fetch(REGISTER_URL,
                 {
                     method: "POST",
                     headers: { "Content-type": "application/json;charset=UTF-8" },
@@ -35,16 +39,22 @@ const RegistrationPage = (props) => {
                 }
             );
             const data = await res.json();
-            console.log(data)
             if (res.ok) {
                 userNamereset();
                 fullNameReset();
                 emailReset();
                 passwordreset();
+                toast.success("ثبت نام شما با موفقیت انجام شد");
+                setTimeout(() => {
+                    navigate("../login")
+                }, 1500)
+            } else {
+                toast.error(data + ": خطا")
             }
         }
         catch (e) {
-            console.error(e)
+            console.error(e.message);
+
         }
         finally {
             setIsLoading(false)
