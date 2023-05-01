@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "miladbeygi1992@gmail.com",
+      "password": "$2a$10$RXoc7qYNK6J0fyPuJx2FS.eEducFAezGLbLQPFn8mQ.xeD.uSjMkK",
+      "userName": "milad",
+      "fullName": "milad beygi",
+      "id": 1
+    },
+    {
+      "email": "miladbeygi92@gmail.com",
+      "password": "$2a$10$5n0euUkVRjNq9mE.dfSSj.cyqSOXPlfbvSel45jzuC/FJFZoHdEj.",
+      "userName": "admin",
+      "fullName": "milad b",
+      "id": 2
+    }
+  ]
 }
