@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
+import Input from './components/Input';
+import LoginPage from './pages/LoginPage';
+import { Route, Routes } from 'react-router-dom';
+import MainLayout from './layout/MainLayout';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
+  const pagesList = [
+    {
+      path: "/login",
+      element: <LoginPage />,
+      title: "login page"
+    },
+    {
+      path: "/registration",
+      element: <RegistrationPage />,
+      title: "registartion page"
+    },
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainLayout>
+      <div className="App">
+        <Routes>
+          {pagesList.map((page, i) => <Route key={i + 1} path={page.path} element={page.element} />)}
+        </Routes>
+      </div>
+    </MainLayout>
   );
 }
 
