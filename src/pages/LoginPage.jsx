@@ -59,7 +59,7 @@ const LoginPage = (props) => {
         }
     }, [isLoggedIn])
     return <>
-        <form onSubmit={submitHandler} className="w-2/4 mx-auto my-5">
+        <form onSubmit={submitHandler} className="w-2/4 mx-auto py-5">
             <Input type='email' id='email' value={emailValue} onChange={emailChangeHandler} onBlur={emailBlurHandler} placeholder="example@example.com" label="لطفا ایمیل خود را وارد کنید" />
             {emailHasError && <div className="text-red-500"> ایمیل نامعتبر است  </div>}
 

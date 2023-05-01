@@ -61,7 +61,7 @@ const RegistrationPage = (props) => {
         }
     }
     return <>
-        <form onSubmit={submitHandler} className="w-2/4 mx-auto">
+        <form onSubmit={submitHandler} className="w-2/4 mx-auto my-0">
             <Input type='text' id='userName' placeholder='نام کاربری' label='نام کاربری خود را وارد کنید' value={userName} onBlur={userNameBlurHandler} onChange={userNameChangeHandler} />
             {userNameHasError && <div className="text-red-500">نام کاربری باید بیشتر از دو حرف باشد</div>}
 

@@ -13,6 +13,7 @@ import Advertises from './pages/Advertises';
 export const UserContext = createContext();
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const pagesList = [
     {
       path: "/login",
@@ -38,10 +39,10 @@ function App() {
   }, [])
   return (
     <>
-      <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn, isDarkTheme, setIsDarkTheme }}>
         <ToastContainer />
         <MainLayout>
-          <div className="App">
+          <div className={`App ${isDarkTheme ? "bg-slate-800 text-slate-100" : ""}`}>
             <Routes>
               <Route path='/' element={<Navigate to="/advertises" />} />
               {pagesList.map((page, i) => <Route key={i + 1} path={page.path} element={page.element} />)}

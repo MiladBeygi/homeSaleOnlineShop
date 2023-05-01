@@ -5,8 +5,9 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 
 const Header = (props) => {
+    const { backGround } = props;
     const navigate = useNavigate();
-    const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+    const { isLoggedIn, setIsLoggedIn, isDarkTheme, setIsDarkTheme } = useContext(UserContext);
     useEffect(() => {
         if (sessionStorage.getItem("ACCESS_TOKEN")) {
             setIsLoggedIn(true);
@@ -16,12 +17,18 @@ const Header = (props) => {
         sessionStorage.removeItem("ACCESS_TOKEN");
         setIsLoggedIn(false);
     }
+    const themeChangeHandler = () => {
+        setIsDarkTheme((prevState) => {
+            return !prevState
+        })
+    }
     return <>
-        <div className="flex justify-center items-center mx-5 " dir="rtl">
-            <div className="w-1/4">
+        <div className={`flex justify-center items-center px-5  ${backGround ? "bg-slate-800 text-slate-100" : ""} `} dir="rtl">
+            <div className="w-1/4 flex">
                 <Link to='/'>
                     <img className="w-[50px] " src="img/logo.png" />
                 </Link>
+                <Button onClick={themeChangeHandler} classes='bg-sky-600'>{"تغییر رنگ تم"}</Button>
             </div>
             <div className="flex items-center justify-start w-2/4">
 
