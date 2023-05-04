@@ -6,27 +6,6 @@
       "userName": "milad",
       "fullName": "milad beygi",
       "id": 1
-    },
-    {
-      "email": "miladbeygi92@gmail.com",
-      "password": "$2a$10$5n0euUkVRjNq9mE.dfSSj.cyqSOXPlfbvSel45jzuC/FJFZoHdEj.",
-      "userName": "admin",
-      "fullName": "milad b",
-      "id": 2
-    },
-    {
-      "email": "almasebourse@gmail.com",
-      "password": "$2a$10$1/wYbsfy89mN0zswPNTC5OQr8TmOgeB/AFJH6amay1zQDIc/Dg5Ny",
-      "userName": "admin",
-      "fullName": "milad beygi",
-      "id": 3
-    },
-    {
-      "email": "miladforwarzone@gmail.com",
-      "password": "$2a$10$JwmXzQqnGjm2inmcXUxA8.cIawNAcFcpUVwbo7K3BDit/xiwgChxa",
-      "userName": "fdfd",
-      "fullName": "milad beygi",
-      "id": 4
     }
   ],
   "advertises": [
@@ -38,6 +17,9 @@
       "hasElevator": "true",
       "hasParking": "true",
       "hasStorage": "true",
+      "price": "110",
+      "phone": "09121234567",
+      "area": "80",
       "location": [
         35.71237104923789,
         51.42872343096392
@@ -55,6 +37,9 @@
       "hasElevator": "true",
       "hasParking": "false",
       "hasStorage": "false",
+      "price": "90",
+      "phone": "09121234567",
+      "area": "80",
       "location": [
         35.69689817401091,
         51.41498271816079
@@ -63,6 +48,406 @@
       "createdAt": 1683241068532,
       "updatetdAt": 1683241068532,
       "id": 2
+    },
+    {
+      "title": "آپارتمان 5 خوابه",
+      "year": "1390",
+      "bedrooms": "5",
+      "floor": "10",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "60",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.78544323585051,
+        51.4508663162703
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683241686645,
+      "updatetdAt": 1683241686645,
+      "id": 3
+    },
+    {
+      "title": "آپارتمان 4 خوابه",
+      "year": "1400",
+      "bedrooms": "4",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "70",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.802151939884055,
+        51.426242811825226
+      ],
+      "description": "آپارتمانی بسیار زیبا با ویوی بسیار دیدنی و ابدی",
+      "createdAt": 1683241764108,
+      "updatetdAt": 1683241764108,
+      "id": 4
+    },
+    {
+      "title": "آپارتمان 1 خوابه",
+      "year": "1387",
+      "bedrooms": "1",
+      "floor": "3",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "false",
+      "price": "45",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.67995820614858,
+        51.41395216470057
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242309022,
+      "updatetdAt": 1683242309022,
+      "id": 5
+    },
+    {
+      "title": "آپارتمان 2 خوابه",
+      "year": "1396",
+      "bedrooms": "2",
+      "floor": "3",
+      "hasElevator": "false",
+      "hasParking": "false",
+      "hasStorage": "true",
+      "price": "25",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.66573422112007,
+        51.44289510157146
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242365942,
+      "updatetdAt": 1683242365942,
+      "id": 6
+    },
+    {
+      "title": "آپارتمان 2 خوابه",
+      "year": "1399",
+      "bedrooms": "2",
+      "floor": "0",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "false",
+      "price": "65",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.7105939121815,
+        51.43455831477685
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242488997,
+      "updatetdAt": 1683242488997,
+      "id": 7
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1401",
+      "bedrooms": "3",
+      "floor": "6",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "80",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.73202145196928,
+        51.41893478868007
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242552965,
+      "updatetdAt": 1683242552965,
+      "id": 8
+    },
+    {
+      "title": "آپارتمان 1 خوابه",
+      "year": "1401",
+      "bedrooms": "1",
+      "floor": "5",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "90",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.757134854416684,
+        51.438503161555325
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242593597,
+      "updatetdAt": 1683242593597,
+      "id": 9
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1400",
+      "bedrooms": "3",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "65",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.757761717323824,
+        51.43820236401333
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242637768,
+      "updatetdAt": 1683242637768,
+      "id": 10
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1388",
+      "bedrooms": "3",
+      "floor": "4",
+      "hasElevator": "false",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "35",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.72655187986273,
+        51.47249109009463
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242685406,
+      "updatetdAt": 1683242685406,
+      "id": 11
+    },
+    {
+      "title": "آپارتمان 2 خوابه",
+      "year": "1371",
+      "bedrooms": "2",
+      "floor": "1",
+      "hasElevator": "false",
+      "hasParking": "false",
+      "hasStorage": "false",
+      "price": "20",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.71648270463685,
+        51.46986984043809
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242733414,
+      "updatetdAt": 1683242733414,
+      "id": 12
+    },
+    {
+      "title": "آپارتمان 4 خوابه",
+      "year": "1400",
+      "bedrooms": "4",
+      "floor": "5",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "160",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.79978508709687,
+        51.410020418031294
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242860470,
+      "updatetdAt": 1683242860470,
+      "id": 13
+    },
+    {
+      "title": "آپارتمان 5 خوابه",
+      "year": "1401",
+      "bedrooms": "5",
+      "floor": "3",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "200",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.80229116432248,
+        51.426034498065256
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242890262,
+      "updatetdAt": 1683242890262,
+      "id": 14
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1387",
+      "bedrooms": "3",
+      "floor": "5",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "100",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.804657942441665,
+        51.45971170507111
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683242912318,
+      "updatetdAt": 1683242912319,
+      "id": 15
+    },
+    {
+      "title": "آپارتمان 5 خوابه",
+      "year": "1388",
+      "bedrooms": "2",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "120",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.80253480650262,
+        51.464086339257044
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683243053022,
+      "updatetdAt": 1683243053022,
+      "id": 16
+    },
+    {
+      "title": "آپارتمان 1 خوابه",
+      "year": "1401",
+      "bedrooms": "1",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "80",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.80232597039397,
+        51.475334060770905
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683243077854,
+      "updatetdAt": 1683243077854,
+      "id": 17
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1399",
+      "bedrooms": "3",
+      "floor": "3",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "95",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.81029615912054,
+        51.48627132896727
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683243101910,
+      "updatetdAt": 1683243101910,
+      "id": 18
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1399",
+      "bedrooms": "3",
+      "floor": "1",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "false",
+      "price": "85",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.81053977674563,
+        51.46389609782728
+      ],
+      "description": "آپارتمانی بسیار زیبا ودیدنی",
+      "createdAt": 1683243142092,
+      "updatetdAt": 1683243142092,
+      "id": 19
+    },
+    {
+      "title": "آپارتمان 1 خوابه",
+      "year": "1380",
+      "bedrooms": "1",
+      "floor": "2",
+      "hasElevator": "false",
+      "hasParking": "true",
+      "hasStorage": "false",
+      "price": "45",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.8067114133769,
+        51.461671083410174
+      ],
+      "description": "آپارتمانی نقلی بسیار زیبا وتکخواب",
+      "createdAt": 1683243182598,
+      "updatetdAt": 1683243182598,
+      "id": 20
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1400",
+      "bedrooms": "3",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "70",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.71334671547798,
+        51.40313135336813
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683244097688,
+      "updatetdAt": 1683244097688,
+      "id": 21
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1388",
+      "bedrooms": "3",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "50",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.69675876508983,
+        51.42631880622336
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683244421136,
+      "updatetdAt": 1683244421136,
+      "id": 22
     }
   ]
 }

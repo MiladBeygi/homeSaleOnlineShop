@@ -39,6 +39,15 @@ const AddAdvertisement = (props) => {
     //for field validation ===> for description
     const { value: descriptionValue, isValid: descriptionIsValid, hasError: descriptionHasError, valueChangeHandler: descriptionChangeHandler, inputBlurHandler: descriptionBlurHandler, reset: descriptionReset } = useInput((input) => input.length >= 10);
 
+    //for field validation ===> for price
+    const { value: priceValue, isValid: priceIsValid, hasError: priceHasError, valueChangeHandler: priceChangeHandler, inputBlurHandler: priceBlurHandler, reset: priceReset } = useInput((input) => +input >= 0.5 && +input <= 1000);
+
+    //for field validation ===> for phone number
+    const { value: phoneNumberValue, isValid: phoneNumberIsValid, hasError: phoneNumberHasError, valueChangeHandler: phoneNumberChangeHandler, inputBlurHandler: phoneNumberBlurHandler, reset: phoneNumberReset } = useInput((input) => input.length === 11 && input.startsWith("09"));
+
+    //for field validation ===> for area
+    const { value: areaValue, isValid: areaIsValid, hasError: areaHasError, valueChangeHandler: areaChangeHandler, inputBlurHandler: areaBlurHandler, reset: areaReset } = useInput((input) => +input >= 10 && input <= 1500);
+
     const elevatorChangeHandler = (event) => {
         setHasElevator(event.target.value);
     }
@@ -48,7 +57,7 @@ const AddAdvertisement = (props) => {
     const storageChangeHandler = (event) => {
         setHasStorage(event.target.value);
     }
-    const formIsValid = titleIsValid && yearIsValid && bedroomIsValid && floorIsValid && descriptionIsValid && (location !== null);
+    const formIsValid = titleIsValid && yearIsValid && bedroomIsValid && floorIsValid && descriptionIsValid && priceIsValid && phoneNumberIsValid && areaIsValid && (location !== null);
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -68,6 +77,9 @@ const AddAdvertisement = (props) => {
                 hasElevator,
                 hasParking,
                 hasStorage,
+                price: priceValue,
+                phone: phoneNumberValue,
+                area: areaValue,
                 location: [location.lat, location.lng],
                 description: descriptionValue,
                 createdAt: (new Date()).getTime(),
@@ -90,6 +102,9 @@ const AddAdvertisement = (props) => {
                 floorReset();
                 setLocation({ lat: null, lng: null });
                 descriptionReset();
+                priceReset();
+                phoneNumberReset();
+                areaReset();
             }
             console.log(data);
         }
@@ -142,8 +157,18 @@ const AddAdvertisement = (props) => {
                 />
                 <LocationMarker position={location} homeLocation={(input) => setLocation(input)} />
             </MapContainer>
-            <Input id="description" type="text" label="توضیحات : " value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
+            <Input id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
             {descriptionHasError && <div className="text-red-500"> توضیحات باید بیشتر از 10 حرف باشد   </div>}
+
+            <Input id="price" type="number" label="قیمت هر متر مربع (به میلیون تومان) :" value={priceValue} onChange={priceChangeHandler} onBlur={priceBlurHandler} placeholder="برای مثال : 20" />
+            {priceHasError && <div className="text-red-500"> قیمت هر متر مربع از خانه باید بیشتر از نیم میلیون تومان و کمتر از هزار میلیون تومان باشد  </div>}
+
+            <Input id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />
+            {phoneNumberHasError && <div className="text-red-500"> شماره تماس باید 11 رقم بوده و با 09 شروع شود </div>}
+
+            <Input id="area" type="number" label="متراژ (متر مربع)" value={areaValue} onChange={areaChangeHandler} onBlur={areaBlurHandler} placeholder="برای مثال 110" />
+            {areaHasError && <div className="text-red-500"> متراژ خانه باید بیشتر از 10 متر مربع و کمتر از 1500 متر مربع باشد</div>}
+
             <Button disabled={!formIsValid} type="submit" classes="my-5">
                 {isLoading && <Spinner />}
                 ثبت آگهی
