@@ -4,7 +4,7 @@ import { UserContext } from "../App";
 import Footer from "../components/Footer";
 
 const MainLayout = (props) => {
-    const { isDarkTheme, setIsDarkTheme } = useContext(UserContext)
+    const { isDarkTheme } = useContext(UserContext)
     useEffect(() => {
 
     }, [isDarkTheme])
@@ -12,7 +12,7 @@ const MainLayout = (props) => {
     const { children } = props;
     return <>
         <Header backGround={isDarkTheme} />
-        <div className={`${isDarkTheme ? "bg-slate-800 text-slate-100" : ""} min-h-[500px]`}>
+        <div className={`${isDarkTheme ? "bg-slate-800 text-slate-100" : ""} min-h-[750px]`}>
             {children}
         </div >
         <Footer backGround={isDarkTheme} />

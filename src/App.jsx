@@ -9,7 +9,9 @@ import RegistrationPage from './pages/RegistrationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createContext, useEffect, useState } from 'react';
+import AddAdvertisement from './pages/AddAdvertisement';
 import Advertises from './pages/Advertises';
+
 export const UserContext = createContext();
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,6 +32,12 @@ function App() {
       path: "/advertises",
       element: <Advertises />,
       title: "advertises page"
+    },
+    {
+
+      path: "/add-advertisement",
+      element: <AddAdvertisement />,
+      title: "add advertises page"
     },
   ]
   useEffect(() => {

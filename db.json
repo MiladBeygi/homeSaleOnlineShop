@@ -28,5 +28,41 @@
       "fullName": "milad beygi",
       "id": 4
     }
+  ],
+  "advertises": [
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1398",
+      "bedrooms": "3",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "location": [
+        35.71237104923789,
+        51.42872343096392
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683240784291,
+      "updatetdAt": 1683240784291,
+      "id": 1
+    },
+    {
+      "title": "آپارتمان 3 خوابه",
+      "year": "1401",
+      "bedrooms": "2",
+      "floor": "0",
+      "hasElevator": "true",
+      "hasParking": "false",
+      "hasStorage": "false",
+      "location": [
+        35.69689817401091,
+        51.41498271816079
+      ],
+      "description": "آپارتمانی بسیار زیبا",
+      "createdAt": 1683241068532,
+      "updatetdAt": 1683241068532,
+      "id": 2
+    }
   ]
 }

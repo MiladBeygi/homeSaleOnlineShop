@@ -1,6 +1,8 @@
+import MyMap from "../components/MyMap";
+import Card from "./../components/Card";
 const Advertises = (props) => {
     return <>
-        hello
+        <MyMap />
     </>
 }
 export default Advertises;

@@ -32,7 +32,7 @@ const Header = (props) => {
             </div>
             <div className="flex items-center justify-start w-2/4">
 
-                <Link className='m-2' to='/add-adverstiement'>افزودن آگهی </Link>
+                {isLoggedIn && <Link className='m-2' to='/add-advertisement'>افزودن آگهی </Link>}
                 <Link className='m-2' to='/advertises'>
                     آگهی‌ها
                 </Link>
