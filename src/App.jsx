@@ -44,6 +44,9 @@ function App() {
     if (sessionStorage.getItem("ACCESS_TOKEN")) {
       setIsLoggedIn(true);
     }
+    if (sessionStorage.getItem("IS_DARK_THEME")) {
+      setIsDarkTheme(true);
+    }
   }, [])
   return (
     <>

@@ -18,9 +18,13 @@ const Header = (props) => {
         setIsLoggedIn(false);
     }
     const themeChangeHandler = () => {
-        setIsDarkTheme((prevState) => {
-            return !prevState
-        })
+        if (!isDarkTheme) {
+            setIsDarkTheme(true);
+            sessionStorage.setItem("IS_DARK_THEME", JSON.stringify(true))
+        } else {
+            setIsDarkTheme(false);
+            sessionStorage.removeItem("IS_DARK_THEME");
+        }
     }
     return <>
         <div className={`flex justify-center items-center px-5  ${backGround ? "bg-slate-800 text-slate-100" : ""} `} dir="rtl">
