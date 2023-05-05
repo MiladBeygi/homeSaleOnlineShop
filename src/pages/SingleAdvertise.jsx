@@ -1,15 +1,46 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ADVERTISES_URL } from "../constants/URLS";
 import { toast } from "react-toastify";
 import { Spinner } from "flowbite-react";
 import MyMap from "../components/MyMap";
+import Button from "../components/Button";
+import { UserContext } from "../App";
+import DeleteModal from "../components/DeleteModal/DeleteModal";
+import BackDrop from "../components/BackDrop";
 
 const SingleAdvertise = (props) => {
     const [ad, setAd] = useState({ title: "", year: "", id: "", bedrooms: "", floor: "", hasElevator: "", hasParking: "", hasStorage: "", price: "", phone: "", area: "", location: ["", ""], description: "" });
     const [isLoading, setIsLoading] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const { isLoggedIn } = useContext(UserContext);
+    const navigate = useNavigate();
+    const [deletedObj, setDeletedObj] = useState({})
 
     const params = useParams();
+
+    const deleteclickHandler = () => {
+        setShowDeleteModal(true);
+    }
+    const deleteAdvertise = async () => {
+        try {
+            const res = await fetch(ADVERTISES_URL + `/${params.productId}`, {
+                method: "DELETE",
+                headers: { "Content-type": "application/json;charset=UTF-8" },
+                body: JSON.stringify(ad)
+            });
+            const data = await res.json();
+            if (res.ok) {
+                navigate("../");
+            }
+        }
+        catch (e) {
+            toast.error(e.message)
+        }
+        finally {
+
+        }
+    }
     useEffect(() => {
         const getAd = async () => {
             try {
@@ -27,7 +58,7 @@ const SingleAdvertise = (props) => {
             }
         }
         getAd()
-    }, [])
+    }, [isLoggedIn])
     return <>
         {isLoading && <Spinner className="my-5" size={"xl"} />}
         {!isLoading && <div dir="rtl" className="grid grid-cols-1 md:grid-cols-2 mx-auto px-5 py-[50px] min-h-[85vh] ">
@@ -77,7 +108,12 @@ const SingleAdvertise = (props) => {
             <div className="py-5">
                 <MyMap position={ad.location} />
             </div>
+            {isLoggedIn && <Button classes="bg-yellow-500 py-2">ویرایش آگهی</Button>}
+            {isLoggedIn && <Button onClick={deleteclickHandler} classes="bg-red-600 py-2">حذف آگهی</Button>}
+            {showDeleteModal && <DeleteModal showDeleteModal={showDeleteModal} closeDeleteModal={() => setShowDeleteModal(false)} deleteAdvertise={deleteAdvertise} />}
+            {showDeleteModal && <BackDrop />}
         </div>}
+
     </>
 }
 export default SingleAdvertise;

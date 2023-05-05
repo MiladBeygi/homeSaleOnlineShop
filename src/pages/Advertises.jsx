@@ -4,6 +4,7 @@ import Card from "./../components/Card";
 import { ADVERTISES_URL } from "../constants/URLS";
 import { toast } from "react-toastify";
 import { Pagination, Spinner } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 const Advertises = (props) => {
 
     //waht we need for fetching data from server and loading 
@@ -15,6 +16,7 @@ const Advertises = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 8;
     const visitedPosts = (currentPage - 1) * postsPerPage;
+    const navigate = useNavigate();
 
 
 
@@ -22,6 +24,7 @@ const Advertises = (props) => {
     const onPageChange = (number) => {
         // console.log(number);
         setCurrentPage(number);
+        navigate(`?page=${number}`);
     }
     useEffect(() => {
         const getData = async () => {
@@ -56,9 +59,9 @@ const Advertises = (props) => {
         <div className="pagination flex items-center justify-center text-center focus:bg-sky-500 py-5">
             <Pagination
                 currentPage={currentPage}
-                layout="pagination"
+
                 onPageChange={onPageChange}
-                showIcons={true}
+                showIcons={false}
                 totalPages={Math.ceil(advertises.length / postsPerPage)}
                 previousLabel="صفحه قبل"
                 nextLabel="صفحه بعد"
