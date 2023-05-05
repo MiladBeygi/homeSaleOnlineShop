@@ -27,7 +27,7 @@ const DeleteModal = React.forwardRef((props, ref) => {
     }
     return <>
         <div ref={ref} className={`bg-slate-400 p-4 md:fixed md:inset-x-5 z-[99999999] md:w-2/4 md:top-[30%] md:left-[25%] md:right-[25%]  rounded-3xl ${showDeleteModal ? "ModalOpen" : "ModalClosed"}`}>
-            <h1 className="text-lg font-bold">آیا از حذف محصول مطمئن هستید ؟</h1>
+            <h1 className="text-lg font-bold">آیا از حذف آگهی مطمئن هستید ؟</h1>
             <div className="sm:flex sm:justify-center">
                 <div className="mx-5 px-5">
                     <Button onClick={yesClickHandler}>

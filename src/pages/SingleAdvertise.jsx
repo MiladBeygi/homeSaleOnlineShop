@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ADVERTISES_URL } from "../constants/URLS";
 import { toast } from "react-toastify";
@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import { UserContext } from "../App";
 import DeleteModal from "../components/DeleteModal/DeleteModal";
 import BackDrop from "../components/BackDrop";
+import useHandleClickOutside from "../hooks/useHandleClickOutSide"
 
 const SingleAdvertise = (props) => {
     const [ad, setAd] = useState({ title: "", year: "", id: "", bedrooms: "", floor: "", hasElevator: "", hasParking: "", hasStorage: "", price: "", phone: "", area: "", location: ["", ""], description: "" });
@@ -15,7 +16,15 @@ const SingleAdvertise = (props) => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const { isLoggedIn } = useContext(UserContext);
     const navigate = useNavigate();
-    const [deletedObj, setDeletedObj] = useState({})
+    const [deletedObj, setDeletedObj] = useState({});
+
+    //what we need for handle click outside to disapear delete modal
+    const deleteBtnRef = useRef();
+    const deleteModalRef = useRef();
+    const closeDeleteModal = () => {
+        setShowDeleteModal(false);
+    }
+    useHandleClickOutside(deleteModalRef, deleteBtnRef, closeDeleteModal);
 
     const params = useParams();
 
@@ -109,8 +118,8 @@ const SingleAdvertise = (props) => {
                 <MyMap position={ad.location} />
             </div>
             {isLoggedIn && <Button classes="bg-yellow-500 py-2">ویرایش آگهی</Button>}
-            {isLoggedIn && <Button onClick={deleteclickHandler} classes="bg-red-600 py-2">حذف آگهی</Button>}
-            {showDeleteModal && <DeleteModal showDeleteModal={showDeleteModal} closeDeleteModal={() => setShowDeleteModal(false)} deleteAdvertise={deleteAdvertise} />}
+            {isLoggedIn && <Button ref={deleteBtnRef} onClick={deleteclickHandler} classes="bg-red-600 py-2">حذف آگهی</Button>}
+            {showDeleteModal && <DeleteModal ref={deleteModalRef} showDeleteModal={showDeleteModal} closeDeleteModal={closeDeleteModal} deleteAdvertise={deleteAdvertise} />}
             {showDeleteModal && <BackDrop />}
         </div>}
 
