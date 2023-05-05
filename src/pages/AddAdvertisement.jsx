@@ -160,7 +160,7 @@ const AddAdvertisement = (props) => {
             <Input id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
             {descriptionHasError && <div className="text-red-500"> توضیحات باید بیشتر از 10 حرف باشد   </div>}
 
-            <Input id="price" type="number" label="قیمت هر متر مربع (به میلیون تومان) :" value={priceValue} onChange={priceChangeHandler} onBlur={priceBlurHandler} placeholder="برای مثال : 20" />
+            <Input id="price" type="number" label="قیمت هر متر مربع ( میلیون تومان) :" value={priceValue} onChange={priceChangeHandler} onBlur={priceBlurHandler} placeholder="برای مثال : 20" />
             {priceHasError && <div className="text-red-500"> قیمت هر متر مربع از خانه باید بیشتر از نیم میلیون تومان و کمتر از هزار میلیون تومان باشد  </div>}
 
             <Input id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />

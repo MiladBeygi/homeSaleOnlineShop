@@ -448,6 +448,26 @@
       "createdAt": 1683244421136,
       "updatetdAt": 1683244421136,
       "id": 22
+    },
+    {
+      "title": "آپارتمان 80 متری نوساز ",
+      "year": "1401",
+      "bedrooms": "2",
+      "floor": "2",
+      "hasElevator": "true",
+      "hasParking": "true",
+      "hasStorage": "true",
+      "price": "70",
+      "phone": "09121234567",
+      "area": "80",
+      "location": [
+        35.70381603557485,
+        51.42086654313226
+      ],
+      "description": "دارای یک خواب مستر ",
+      "createdAt": 1683287069102,
+      "updatetdAt": 1683287069102,
+      "id": 23
     }
   ]
 }
