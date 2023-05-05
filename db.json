@@ -470,23 +470,22 @@
       "id": 23
     },
     {
-      "title": "gdgdfgsfdsfsdf",
+      "title": "test advertise",
       "year": "1400",
-      "bedrooms": "3",
-      "floor": "2",
-      "hasElevator": "true",
-      "hasParking": "true",
-      "hasStorage": "true",
-      "price": "90",
+      "bedrooms": "14",
+      "floor": "14",
+      "hasElevator": "false",
+      "hasParking": "false",
+      "hasStorage": "false",
+      "price": "115",
       "phone": "09121234567",
-      "area": "100",
-      "location": [
-        35.69501613301332,
-        51.44091831357665
-      ],
+      "area": "114",
+      "location": {
+        "lat": 35.70072746751822,
+        "lng": 51.33794585880331
+      },
       "description": "آپارتمانی بسیار زیبا",
-      "createdAt": 1683294784132,
-      "updatetdAt": 1683294784132,
+      "updatedAt": 1683310061389,
       "id": 24
     }
   ]
