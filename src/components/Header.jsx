@@ -30,7 +30,7 @@ const Header = (props) => {
         <div className={`flex justify-center items-center px-5  ${backGround ? "bg-slate-800 text-slate-100" : ""} `} dir="rtl">
             <div className="w-1/4 flex">
                 <Link to='/'>
-                    <img className="w-[50px] " src="img/logo.png" />
+                    <img className="w-[50px] " src="img/logo.png" alt="logo" />
                 </Link>
                 <Button onClick={themeChangeHandler} classes='bg-sky-600'>{"تغییر رنگ تم"}</Button>
             </div>

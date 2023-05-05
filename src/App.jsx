@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createContext, useEffect, useState } from 'react';
 import AddAdvertisement from './pages/AddAdvertisement';
 import Advertises from './pages/Advertises';
+import SingleAdvertise from './pages/SingleAdvertise';
 
 export const UserContext = createContext();
 function App() {
@@ -38,6 +39,12 @@ function App() {
       path: "/add-advertisement",
       element: <AddAdvertisement />,
       title: "add advertises page"
+    },
+    {
+
+      path: "/advertises/:productId",
+      element: <SingleAdvertise />,
+      title: "single Advertisement page"
     },
   ]
   useEffect(() => {
