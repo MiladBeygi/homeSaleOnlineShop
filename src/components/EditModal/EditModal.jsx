@@ -55,6 +55,8 @@ const EditModal = React.forwardRef((props, ref) => {
         setHasStorage(event.target.value);
         console.log(event.target.value);
     }
+
+    const formIsValid = titleIsValid && yearIsValid && bedroomIsValid && floorIsValid && priceIsValid && phoneNumberIsValid && areaIsValid && descriptionIsValid;
     const submitHandler = async (event) => {
         event.preventDefault();
         setIsLoading(true);
@@ -96,35 +98,54 @@ const EditModal = React.forwardRef((props, ref) => {
         }
     }
     return <>
-        <form dir="rtl" ref={ref} className={`bg-slate-400 p-4 md:fixed md:inset-x-5 z-[99999999] md:w-3/4 md:top-[5%] md:left-[12.5%] md:right-[12.5%]  rounded-3xl ${showEditModal ? "ModalOpen" : "ModalClosed"} md:grid md:grid-cols-4`}>
+        <form dir="rtl" ref={ref} className={`bg-slate-400 p-4 md:fixed md:inset-x-5 z-[99999999] md:w-3/4 md:top-[1%] md:left-[12.5%] md:right-[12.5%]  rounded-3xl ${showEditModal ? "ModalOpen" : "ModalClosed"} md:grid md:grid-cols-4`}>
+            <div>
 
-            <Input id="ad-title" type="text" label="عنوان آگهی را بنویسید : " value={titleValue} placeholder="برای مثال : آپارتمان 3 خوابه" onChange={titleChangeHandler} onBlur={titleBlurHandler} />
-            {titleHasError && <div className="text-red-500">عنوان آگهی  باید بیشتر از پنج حرف باشد</div>}
+                <Input id="ad-title" type="text" label="عنوان آگهی را بنویسید : " value={titleValue} placeholder="برای مثال : آپارتمان 3 خوابه" onChange={titleChangeHandler} onBlur={titleBlurHandler} />
+                {titleHasError && <div className="text-red-500">عنوان آگهی  باید بیشتر از پنج حرف باشد</div>}
+            </div>
 
+            <div>
 
-            <Input id='construction-year' type="number" label="سال ساخت ملک : " placeholder="برای مثال : 1401" value={yearValue} onChange={yearChangeHandler} onBlur={yearBlurHandler} />
-            {yearHasError && <div className="text-red-500"> سال ساخت باید بیشتر از 1250 و کمتر از 1403 باشد    </div>}
+                <Input id='construction-year' type="number" label="سال ساخت ملک : " placeholder="برای مثال : 1401" value={yearValue} onChange={yearChangeHandler} onBlur={yearBlurHandler} />
+                {yearHasError && <div className="text-red-500"> سال ساخت باید بیشتر از 1250 و کمتر از 1403 باشد    </div>}
+            </div>
 
+            <div>
 
-            <Input id="bedrooms" type="number" label="تعداد اتاق خواب : " placeholder="برای مثال : 3" value={bedroomValue} onChange={bedroomChangeHandler} onBlur={bedroomBlurHandler} />
-            {bedroomHasError && <div className="text-red-500"> تعداد اتاق خواب ها باید بیشتر از صفر و کمتر از 15 باشد     </div>}
+                <Input id="bedrooms" type="number" label="تعداد اتاق خواب : " placeholder="برای مثال : 3" value={bedroomValue} onChange={bedroomChangeHandler} onBlur={bedroomBlurHandler} />
+                {bedroomHasError && <div className="text-red-500"> تعداد اتاق خواب ها باید بیشتر از صفر و کمتر از 15 باشد     </div>}
+            </div>
 
+            <div>
 
-            <Input id="floor" type="number" label="طبقه :" placeholder="برای مثال : 2" value={floorValue} onChange={floorChangeHandler} onBlur={floorBlurHandler} />
-            {floorHasError && <div className="text-red-500"> طبقه باید بیشتر از -2 و کمتر از 50 باشد    </div>}
+                <Input id="floor" type="number" label="طبقه :" placeholder="برای مثال : 2" value={floorValue} onChange={floorChangeHandler} onBlur={floorBlurHandler} />
+                {floorHasError && <div className="text-red-500"> طبقه باید بیشتر از -2 و کمتر از 50 باشد    </div>}
+            </div>
 
+            <div>
 
-            <Input id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
-            {descriptionHasError && <div className="text-red-500"> توضیحات باید بیشتر از 10 حرف باشد   </div>}
+                <Input id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
+                {descriptionHasError && <div className="text-red-500"> توضیحات باید بیشتر از 10 حرف باشد   </div>}
+            </div>
+            <div>
 
-            <Input id="price" type="number" label="قیمت هر متر مربع ( میلیون تومان) :" value={priceValue} onChange={priceChangeHandler} onBlur={priceBlurHandler} placeholder="برای مثال : 20" />
-            {priceHasError && <div className="text-red-500"> قیمت هر متر مربع از خانه باید بیشتر از نیم میلیون تومان و کمتر از هزار میلیون تومان باشد  </div>}
+                <Input id="price" type="number" label="قیمت هر متر مربع ( میلیون تومان) :" value={priceValue} onChange={priceChangeHandler} onBlur={priceBlurHandler} placeholder="برای مثال : 20" />
+                {priceHasError && <div className="text-red-500"> قیمت هر متر مربع از خانه باید بیشتر از نیم میلیون تومان و کمتر از هزار میلیون تومان باشد  </div>}
+            </div>
 
-            <Input id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />
-            {phoneNumberHasError && <div className="text-red-500"> شماره تماس باید 11 رقم بوده و با 09 شروع شود </div>}
+            <div>
 
-            <Input id="area" type="number" label="متراژ (متر مربع)" value={areaValue} onChange={areaChangeHandler} onBlur={areaBlurHandler} placeholder="برای مثال 110" />
-            {areaHasError && <div className="text-red-500"> متراژ خانه باید بیشتر از 10 متر مربع و کمتر از 1500 متر مربع باشد</div>}
+                <Input id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />
+                {phoneNumberHasError && <div className="text-red-500"> شماره تماس باید 11 رقم بوده و با 09 شروع شود </div>}
+            </div>
+
+            <div>
+
+                <Input id="area" type="number" label="متراژ (متر مربع)" value={areaValue} onChange={areaChangeHandler} onBlur={areaBlurHandler} placeholder="برای مثال 110" />
+                {areaHasError && <div className="text-red-500"> متراژ خانه باید بیشتر از 10 متر مربع و کمتر از 1500 متر مربع باشد</div>}
+            </div>
+
 
             <Select id="edit-elevator" label="آسانسور : " name="elevator" onChange={elevatorChangeHandler} />
 
@@ -132,13 +153,13 @@ const EditModal = React.forwardRef((props, ref) => {
                 onChange={parkingChangeHandler} />
             <Select id="edit-storage" label="انباری :  " name="storage" onChange={storageChangeHandler} />
 
-            <MapContainer className="h-[300px] w-[90%] mx-auto my-2 rounded-2xl col-span-full" center={location} zoom={14} scrollWheelZoom={false}>
+            <MapContainer className="h-[200px] w-[90%] mx-auto my-2 rounded-2xl col-span-full" center={location} zoom={14} scrollWheelZoom={false}>
                 <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <LocationMarker position={location} homeLocation={(input) => setLocation(input)} />
             </MapContainer>
 
-            <Button onClick={submitHandler} className="col-span-full" type="submit">
+            <Button disabled={!formIsValid} onClick={submitHandler} className="col-span-full" type="submit">
                 {!isLoading && "ثبت تغییرات"}
                 {isLoading && <Spinner />}
             </Button>
