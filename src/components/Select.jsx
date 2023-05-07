@@ -1,7 +1,7 @@
 const Select = (props) => {
-    const { id, name, classes, onChange, label } = props;
+    const { id, name, classes, onChange, label, className } = props;
     return <>
-        <div className="">
+        <div className={className}>
             <label htmlFor={id}>
                 {label}
             </label>

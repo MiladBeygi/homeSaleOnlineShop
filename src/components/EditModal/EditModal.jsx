@@ -103,29 +103,30 @@ const EditModal = React.forwardRef((props, ref) => {
 
                 <Input id="ad-title" type="text" label="عنوان آگهی را بنویسید : " value={titleValue} placeholder="برای مثال : آپارتمان 3 خوابه" onChange={titleChangeHandler} onBlur={titleBlurHandler} />
                 {titleHasError && <div className="text-red-500">عنوان آگهی  باید بیشتر از پنج حرف باشد</div>}
+
             </div>
 
             <div>
 
-                <Input id='construction-year' type="number" label="سال ساخت ملک : " placeholder="برای مثال : 1401" value={yearValue} onChange={yearChangeHandler} onBlur={yearBlurHandler} />
+                <Input className="pt-[30px]" id='construction-year' type="number" label="سال ساخت ملک : " placeholder="برای مثال : 1401" value={yearValue} onChange={yearChangeHandler} onBlur={yearBlurHandler} />
                 {yearHasError && <div className="text-red-500"> سال ساخت باید بیشتر از 1250 و کمتر از 1403 باشد    </div>}
             </div>
 
             <div>
 
-                <Input id="bedrooms" type="number" label="تعداد اتاق خواب : " placeholder="برای مثال : 3" value={bedroomValue} onChange={bedroomChangeHandler} onBlur={bedroomBlurHandler} />
+                <Input className="pt-[30px]" id="bedrooms" type="number" label="تعداد اتاق خواب : " placeholder="برای مثال : 3" value={bedroomValue} onChange={bedroomChangeHandler} onBlur={bedroomBlurHandler} />
                 {bedroomHasError && <div className="text-red-500"> تعداد اتاق خواب ها باید بیشتر از صفر و کمتر از 15 باشد     </div>}
             </div>
 
             <div>
 
-                <Input id="floor" type="number" label="طبقه :" placeholder="برای مثال : 2" value={floorValue} onChange={floorChangeHandler} onBlur={floorBlurHandler} />
+                <Input className="pt-[30px]" id="floor" type="number" label="طبقه :" placeholder="برای مثال : 2" value={floorValue} onChange={floorChangeHandler} onBlur={floorBlurHandler} />
                 {floorHasError && <div className="text-red-500"> طبقه باید بیشتر از -2 و کمتر از 50 باشد    </div>}
             </div>
 
             <div>
 
-                <Input id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
+                <Input className="pt-[30px]" id="description" type="text" label="توضیحات : " placeholder="برای مثال : 3 خواب مستر ،دارای تراس بزرگ" value={descriptionValue} onChange={descriptionChangeHandler} onBlur={descriptionBlurHandler} />
                 {descriptionHasError && <div className="text-red-500"> توضیحات باید بیشتر از 10 حرف باشد   </div>}
             </div>
             <div>
@@ -136,22 +137,22 @@ const EditModal = React.forwardRef((props, ref) => {
 
             <div>
 
-                <Input id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />
+                <Input className="pt-[30px]" id="phone" type="tel" label="شماره تماس : " value={phoneNumberValue} onChange={phoneNumberChangeHandler} onBlur={phoneNumberBlurHandler} placeholder="برای مثال 09121234567" />
                 {phoneNumberHasError && <div className="text-red-500"> شماره تماس باید 11 رقم بوده و با 09 شروع شود </div>}
             </div>
 
             <div>
 
-                <Input id="area" type="number" label="متراژ (متر مربع)" value={areaValue} onChange={areaChangeHandler} onBlur={areaBlurHandler} placeholder="برای مثال 110" />
+                <Input className="pt-[30px]" id="area" type="number" label="متراژ (متر مربع)" value={areaValue} onChange={areaChangeHandler} onBlur={areaBlurHandler} placeholder="برای مثال 110" />
                 {areaHasError && <div className="text-red-500"> متراژ خانه باید بیشتر از 10 متر مربع و کمتر از 1500 متر مربع باشد</div>}
             </div>
 
 
-            <Select id="edit-elevator" label="آسانسور : " name="elevator" onChange={elevatorChangeHandler} />
+            <Select className="pt-5" id="edit-elevator" label="آسانسور : " name="elevator" onChange={elevatorChangeHandler} />
 
-            <Select id="edit-parking" label="پارکینگ : " name="parking"
+            <Select className="pt-5" id="edit-parking" label="پارکینگ : " name="parking"
                 onChange={parkingChangeHandler} />
-            <Select id="edit-storage" label="انباری :  " name="storage" onChange={storageChangeHandler} />
+            <Select className="pt-5" id="edit-storage" label="انباری :  " name="storage" onChange={storageChangeHandler} />
 
             <MapContainer className="h-[200px] w-[90%] mx-auto my-2 rounded-2xl col-span-full" center={location} zoom={14} scrollWheelZoom={false}>
                 <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
