@@ -150,6 +150,7 @@ const SingleAdvertise = (props) => {
 
         </div>}
         {showEditModal && <EditModal ref={editModalRef} id={params.productId} showEditModal={showEditModal} homeLocation={ad.location} title={ad.title} year={ad.year} bedrooms={ad.bedrooms} floor={ad.floor} description={ad.description} price={ad.price} phone={ad.phone} area={ad.area} elevator={ad.hasElevator} parking={ad.hasParking} storage={ad.hasStorage} closeEditModal={closeEditModal} render={render} />}
+        {showEditModal && <BackDrop />}
     </>
 }
 export default SingleAdvertise;
